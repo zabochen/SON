@@ -1,0 +1,25 @@
+<resources>
+
+    <!-- Main Theme -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlNormal">@color/colorControlNormal</item>
+    </style>
+
+    <!-- Splash Screen -->
+    <style name="SplashScreen" parent="Theme.AppCompat.Light.NoActionBar" />
+
+    <!-- Menu Button Style -->
+    <style name="menu_button_style" parent="Theme.AppCompat.Light">
+        <item name="colorControlHighlight">@color/activity_main_menu_button_highlight</item>
+        <item name="colorButtonNormal">@color/activity_main_menu_button_normal</item>
+        <item name="android:textSize">@dimen/activity_main_menu_button_title</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/cardview_light_background</item>
+        <item name="android:padding">@dimen/activity_main_menu_button_padding</item>
+    </style>
+
+
+</resources>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#E91E63</color>
+    <color name="colorPrimaryDark">#C2185B</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorControlNormal">#FFFFFF</color>
+
+    <!-- Toolbar -->
+    <color name="activity_main_toolbar_title">#FFFFFF</color>
+    <color name="activity_listening_toolbar_title">#FFFFFF</color>
+
+    <!-- Tab Layout -->
+    <color name="activity_listening_tab_layout_tab_title">#FFFFFF</color>
+    <color name="activity_listening_tab_layout_tab_title_selected">#FFFFFF</color>
+    <color name="activity_listening_tab_layout_tab_indicator">#FFFFFF</color>
+
+    <!-- Menu button -->
+    <color name="activity_main_menu_button_normal">#E91E63</color>
+    <color name="activity_main_menu_button_highlight">#F48FB1</color>
+
+</resources>

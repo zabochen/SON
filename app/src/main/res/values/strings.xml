@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Sounds of Naturals</string>
+
+    <!-- Main Activity -->
+    <string name="activity_main_button_start_listening_title">Listening</string>
+    <string name="activity_main_button_start_quiz_title">Quiz</string>
+
+    <!-- Listening Activity -->
+    <string name="activity_listening_name">Listening</string>
+
+    <!-- Tab Layout -->
+    <string name="activity_listening_tab_layout_tab_animal_title">Animal</string>
+    <string name="activity_listening_tab_layout_tab_transport_title">Transport</string>
+
+    <!-- Quiz Activity -->
+    <string name="activity_quiz_name">Quiz</string>
+
+</resources>

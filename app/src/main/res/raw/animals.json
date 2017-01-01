@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "type": "animal",
+    "name": "Tiger",
+    "image": "images/animal_icon_01_big_size.png",
+    "sounds": {
+      "sound_1": "sounds/tiger_1.mp3",
+      "sound_2": "sounds/tiger_2.mp3"
+    }
+  },
+  {
+    "id": 2,
+    "type": "animal",
+    "name": "Monkey",
+    "image": "images/animal_icon_02_big_size.png",
+    "sounds": {
+      "sound_1": "sounds/monkey_1.mp3",
+      "sound_2": "sounds/monkey_2.mp3"
+    }
+  },
+  {
+    "id": 3,
+    "type": "animal",
+    "name": "Elephant",
+    "image": "images/animal_icon_03_big_size.png",
+    "sounds": {
+      "sound_1": "sounds/elephant_1.mp3",
+      "sound_2": "sounds/elephant_2.mp3"
+    }
+  },
+  {
+    "id": 4,
+    "type": "animal",
+    "name": "Frog",
+    "image": "images/animal_icon_04_big_size.png",
+    "sounds": {
+      "sound_1": "sounds/frog_1.mp3",
+      "sound_2": "sounds/frog_2.mp3"
+    }
+  },
+  {
+    "id": 5,
+    "type": "animal",
+    "name": "Pig",
+    "image": "images/animal_icon_05_big_size.png",
+    "sounds": {
+      "sound_1": "sounds/pig_1.mp3",
+      "sound_2": "sounds/pig_2.mp3"
+    }
+  },
+  {
+    "id": 6,
+    "type": "animal",
+    "name": "Horse",
+    "image": "images/animal_icon_06_big_size.png",
+    "sounds": {
+      "sound_1": "sounds/horse_1.mp3",
+      "sound_2": "sounds/horse_2.mp3"
+    }
+  },
+  {
+    "id": 7,
+    "type": "animal",
+    "name": "Cat",
+    "image": "images/animal_icon_07_big_size.png",
+    "sounds": {
+      "sound_1": "sounds/cat_1.mp3",
+      "sound_2": "sounds/cat_2.mp3"
+    }
+  },
+  {
+    "id": 8,
+    "type": "animal",
+    "name": "Sheep",
+    "image": "images/animal_icon_08_big_size.png",
+    "sounds": {
+      "sound_1": "sounds/sheep_1.mp3",
+      "sound_2": "sounds/sheep_2.mp3"
+    }
+  },
+  {
+    "id": 9,
+    "type": "animal",
+    "name": "Dog",
+    "image": "images/animal_icon_09_big_size.png",
+    "sounds": {
+      "sound_1": "sounds/dog_1.mp3",
+      "sound_2": "sounds/dog_2.mp3"
+    }
+  },
+  {
+    "id": 10,
+    "type": "animal",
+    "name": "Chicken",
+    "image": "images/animal_icon_10_big_size.png",
+    "sounds": {
+      "sound_1": "sounds/chicken_1.mp3",
+      "sound_2": "sounds/chicken_2.mp3"
+    }
+  },
+  {
+    "id": 11,
+    "type": "animal",
+    "name": "Cow",
+    "image": "images/animal_icon_11_big_size.png",
+    "sounds": {
+      "sound_1": "sounds/cow_1.mp3",
+      "sound_2": "sounds/cow_2.mp3"
+    }
+  },
+  {
+    "id": 12,
+    "type": "animal",
+    "name": "Lion",
+    "image": "images/animal_icon_12_big_size.png",
+    "sounds": {
+      "sound_1": "sounds/lion_1.mp3",
+      "sound_2": "sounds/lion_2.mp3"
+    }
+  }
+]
