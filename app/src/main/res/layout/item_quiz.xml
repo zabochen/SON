@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/item_animal_cardview"
+    android:id="@+id/item_quiz_card_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
@@ -9,17 +9,15 @@
     android:foreground="?attr/selectableItemBackground"
     app:cardCornerRadius="10dp">
 
-    <RelativeLayout
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/item_animal_image"
-            android:layout_width="300dp"
-            android:layout_height="300dp"
-            android:layout_centerInParent="true"
-            android:layout_margin="10dp"
-            android:padding="10dp" />
+            android:id="@+id/item_quiz_image_view"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_centerInParent="true" />
 
     </RelativeLayout>
 

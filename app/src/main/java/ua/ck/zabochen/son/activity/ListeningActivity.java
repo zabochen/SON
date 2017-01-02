@@ -43,7 +43,7 @@ public class ListeningActivity extends AppCompatActivity {
             // Set title color
             toolbar.setTitleTextColor(ContextCompat.getColor(
                     getApplicationContext(),
-                    R.color.activity_main_toolbar_title));
+                    R.color.activity_listening_toolbar_title));
             // Toolbar instead ActionBar
             setSupportActionBar(toolbar);
             // Add Home button

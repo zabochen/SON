@@ -8,6 +8,7 @@
     <!-- Toolbar -->
     <color name="activity_main_toolbar_title">#FFFFFF</color>
     <color name="activity_listening_toolbar_title">#FFFFFF</color>
+    <color name="activity_quiz_toolbar_title">#FFFFFF</color>
 
     <!-- Tab Layout -->
     <color name="activity_listening_tab_layout_tab_title">#FFFFFF</color>
