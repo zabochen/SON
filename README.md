@@ -1,4 +1,4 @@
-# "Sound of Naturals"
+# "Sounds of Naturals"
 
 <p align="center">
   <img src="https://github.com/zabochen/SON/blob/master/screens/1.png?raw=true" width="200"/>
