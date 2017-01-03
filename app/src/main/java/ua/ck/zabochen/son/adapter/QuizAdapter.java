@@ -1,7 +1,6 @@
 package ua.ck.zabochen.son.adapter;
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,17 +10,14 @@ import android.widget.ImageView;
 
 import org.greenrobot.eventbus.EventBus;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 
 import ua.ck.zabochen.son.R;
 import ua.ck.zabochen.son.event.QuizFragmentEvent;
 import ua.ck.zabochen.son.model.Animal;
+import ua.ck.zabochen.son.utils.Utils;
 
 public class QuizAdapter extends RecyclerView.Adapter<QuizAdapter.MyViewHolder> {
-
-    private static final String TAG = QuizAdapter.class.getSimpleName();
 
     private Context mContext;
     private ArrayList<Animal> mAnimals;
@@ -42,22 +38,22 @@ public class QuizAdapter extends RecyclerView.Adapter<QuizAdapter.MyViewHolder> 
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, final int position) {
-        try {
-            InputStream inputStream = mContext.getAssets().open(
-                    mAnimals.get(position).getImage()
-            );
-            Drawable drawable = Drawable.createFromStream(inputStream, null);
-            holder.imageView.setImageDrawable(drawable);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
-        holder.cardView.setOnClickListener(new View.OnClickListener() {
+        // Set animal image
+        holder.animalImageView.setImageDrawable(Utils.getDrawable(
+                mContext,
+                mAnimals.get(position).getImage()
+        ));
+
+        // Get user choice
+        holder.animalCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (position == mTrueAnimal) {
+                    // True answer
                     EventBus.getDefault().post(new QuizFragmentEvent(true));
                 } else {
+                    // False answer
                     EventBus.getDefault().post(new QuizFragmentEvent(false));
                 }
             }
@@ -66,20 +62,18 @@ public class QuizAdapter extends RecyclerView.Adapter<QuizAdapter.MyViewHolder> 
 
     @Override
     public int getItemCount() {
-        return mAnimals.size();
+        return mAnimals.size() > 0 ? mAnimals.size() : 0;
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder {
 
-        private CardView cardView;
-        private ImageView imageView;
+        private CardView animalCardView;
+        private ImageView animalImageView;
 
         public MyViewHolder(View itemView) {
             super(itemView);
-            this.cardView = (CardView) itemView.findViewById(R.id.item_quiz_card_view);
-            this.imageView = (ImageView) itemView.findViewById(R.id.item_quiz_image_view);
+            this.animalCardView = (CardView) itemView.findViewById(R.id.item_quiz_card_view);
+            this.animalImageView = (ImageView) itemView.findViewById(R.id.item_quiz_image_view);
         }
     }
-
-
 }

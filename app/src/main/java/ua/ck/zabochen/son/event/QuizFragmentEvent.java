@@ -2,18 +2,18 @@ package ua.ck.zabochen.son.event;
 
 public class QuizFragmentEvent {
 
-    private boolean response;
+    private boolean answer;
 
     public QuizFragmentEvent(boolean response) {
-        this.response = response;
+        this.answer = response;
     }
 
-    public boolean getResponse() {
-        return response;
+    public boolean getAnswer() {
+        return answer;
     }
 
-    public void setResponse(boolean response) {
-        this.response = response;
+    public void setAnswer(boolean answer) {
+        this.answer = answer;
     }
 
 }

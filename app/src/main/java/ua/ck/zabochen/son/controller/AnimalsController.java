@@ -15,8 +15,6 @@ import ua.ck.zabochen.son.model.Animal;
 
 public class AnimalsController {
 
-    private static final String TAG = AnimalsController.class.getSimpleName();
-
     private static AnimalsController sAnimalsController;
     private static ArrayList<Animal> sAnimals = new ArrayList<>();
 
@@ -39,6 +37,7 @@ public class AnimalsController {
         StringBuilder stringBuilder = new StringBuilder();
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(context.getResources().openRawResource(R.raw.animals)));
 
+        // Reading '/raw/animals.json'
         try {
             while ((buffer = bufferedReader.readLine()) != null) {
                 stringBuilder.append(buffer);
@@ -47,6 +46,7 @@ public class AnimalsController {
             e.printStackTrace();
         }
 
+        // Convert JSON to ArrayList<Animal>
         Gson gson = new Gson();
         sAnimals = gson.fromJson(stringBuilder.toString(), new TypeToken<ArrayList<Animal>>() {
         }.getType());

@@ -19,7 +19,6 @@ public class MainActivity extends AppCompatActivity
         setUi();
     }
 
-
     private void setUi() {
         // Layout
         setContentView(R.layout.activity_main);

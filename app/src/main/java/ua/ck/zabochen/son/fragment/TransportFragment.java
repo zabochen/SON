@@ -26,6 +26,7 @@ public class TransportFragment extends Fragment {
 
         // RecyclerView
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.fragment_transport_recycler_view);
+        recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(new TransportAdapter(getActivity()));
     }

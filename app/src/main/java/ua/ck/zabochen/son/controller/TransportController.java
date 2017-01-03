@@ -37,6 +37,7 @@ public class TransportController {
         StringBuilder stringBuilder = new StringBuilder();
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(context.getResources().openRawResource(R.raw.transport)));
 
+        // Reading '/raw/transport.json'
         try {
             while ((buffer = bufferedReader.readLine()) != null) {
                 stringBuilder.append(buffer);
@@ -45,6 +46,7 @@ public class TransportController {
             e.printStackTrace();
         }
 
+        // Convert JSON to ArrayList<Transport>
         Gson gson = new Gson();
         sTransport = gson.fromJson(stringBuilder.toString(), new TypeToken<ArrayList<Transport>>() {
         }.getType());

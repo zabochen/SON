@@ -40,14 +40,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="25dp"
                 android:text="@string/activity_main_button_start_listening_title"
-                android:theme="@style/menu_button_style" />
+                android:theme="@style/MenuButtonStyle" />
 
             <Button
                 android:id="@+id/activity_main_button_start_quiz"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/activity_main_button_start_quiz_title"
-                android:theme="@style/menu_button_style" />
+                android:theme="@style/MenuButtonStyle" />
 
         </LinearLayout>
 

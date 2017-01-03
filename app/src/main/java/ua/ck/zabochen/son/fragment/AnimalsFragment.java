@@ -14,8 +14,6 @@ import ua.ck.zabochen.son.adapter.AnimalAdapter;
 
 public class AnimalsFragment extends Fragment {
 
-    private static final String TAG = AnimalsFragment.class.getSimpleName();
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -28,7 +26,9 @@ public class AnimalsFragment extends Fragment {
 
         // RecyclerView
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.fragment_animal_recycler_view);
+        recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(new AnimalAdapter(getActivity()));
     }
+
 }

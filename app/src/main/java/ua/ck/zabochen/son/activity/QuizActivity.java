@@ -1,12 +1,13 @@
 package ua.ck.zabochen.son.activity;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -18,14 +19,14 @@ import ua.ck.zabochen.son.fragment.QuizFragment;
 
 public class QuizActivity extends AppCompatActivity {
 
-    private static final String TAG = QuizActivity.class.getSimpleName();
-    private static int sCounter = 0;
+    private static int sCounterTrueAnswers = 0;
+    private static final int DEFAULT_NUMBER_OF_ANIMALS = 2;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setUi();
-        setQuizFragment(savedInstanceState, 2);
+        setQuizFragment(savedInstanceState, DEFAULT_NUMBER_OF_ANIMALS);
     }
 
     @Override
@@ -53,16 +54,29 @@ public class QuizActivity extends AppCompatActivity {
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onMessageEvent(QuizFragmentEvent event) {
-        if (event.getResponse()) {
-            if (sCounter > 3 && sCounter < 10) {
+
+        // Processing answers from user
+        if (event.getAnswer()) {
+            if (sCounterTrueAnswers > 3 && sCounterTrueAnswers <= 10) {
                 setQuizFragment(null, 3);
-            } else if (sCounter > 10) {
+            } else if (sCounterTrueAnswers > 10) {
                 setQuizFragment(null, 4);
             } else {
                 setQuizFragment(null, 2);
             }
         } else {
-            Toast.makeText(getApplicationContext(), "FALSE", Toast.LENGTH_SHORT).show();
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage(getString(R.string.activity_quiz_answer_false))
+                    .setNegativeButton(
+                            R.string.activity_quiz_alert_dialog_button_ok_title,
+                            new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    dialogInterface.cancel();
+                                }
+                            });
+            AlertDialog alertDialog = builder.create();
+            alertDialog.show();
         }
     }
 
@@ -90,7 +104,9 @@ public class QuizActivity extends AppCompatActivity {
                     .beginTransaction()
                     .replace(R.id.activity_quiz_frame_layout, new QuizFragment().newInstance(numberOfAnimals))
                     .commit();
-            sCounter++;
+
+            // Control True answers
+            sCounterTrueAnswers++;
         }
     }
 }

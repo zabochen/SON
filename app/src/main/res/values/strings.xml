@@ -14,5 +14,7 @@
 
     <!-- Quiz Activity -->
     <string name="activity_quiz_name">Quiz</string>
+    <string name="activity_quiz_alert_dialog_button_ok_title">OK</string>
+    <string name="activity_quiz_answer_false">Wrong choice! Select other animal.</string>
 
 </resources>

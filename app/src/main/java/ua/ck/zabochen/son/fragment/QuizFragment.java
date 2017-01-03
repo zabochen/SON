@@ -2,7 +2,6 @@ package ua.ck.zabochen.son.fragment;
 
 import android.app.Fragment;
 import android.content.Context;
-import android.content.res.AssetFileDescriptor;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -12,7 +11,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
 import ua.ck.zabochen.son.R;
@@ -22,12 +20,9 @@ import ua.ck.zabochen.son.utils.Utils;
 
 public class QuizFragment extends Fragment {
 
-    private int mNumberOfAnimals;
-    private MediaPlayer mMediaPlayer;
+    private MediaPlayer mMediaPlayer = null;
     private ArrayList<Animal> mAnimals;
     private int mTrueAnimal;
-
-    private static final String TAG = QuizFragment.class.getSimpleName();
 
     public static QuizFragment newInstance(int numberOfAnimal) {
         QuizFragment quizFragment = new QuizFragment();
@@ -40,8 +35,7 @@ public class QuizFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        mNumberOfAnimals = this.getArguments().getInt("numberOfAnimals");
-        mAnimals = Utils.randomAnimals(mNumberOfAnimals);
+        mAnimals = Utils.randomAnimals(this.getArguments().getInt("numberOfAnimals"));
         mTrueAnimal = Utils.trueAnimal(mAnimals);
     }
 
@@ -57,6 +51,7 @@ public class QuizFragment extends Fragment {
 
         // RecyclerView
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.fragment_quiz_recycler_view);
+        recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(new QuizAdapter(getActivity(), mAnimals, mTrueAnimal));
     }
@@ -64,34 +59,13 @@ public class QuizFragment extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        playSound(mAnimals, mTrueAnimal);
+
+        // Play true animal sound
+        Utils.playSound(
+                getActivity(),
+                mMediaPlayer,
+                mAnimals.get(mTrueAnimal).getAnimalSounds().getSound1()
+        );
     }
 
-    private void playSound(ArrayList<Animal> animals, int animalId) {
-
-        if (mMediaPlayer != null) {
-            mMediaPlayer.release();
-            mMediaPlayer = null;
-        }
-
-        try {
-            mMediaPlayer = new MediaPlayer();
-
-            AssetFileDescriptor assetFileDescriptor = getActivity().getAssets().openFd(
-                    animals.get(animalId).getAnimalSounds().getSound1()
-            );
-
-            mMediaPlayer.setDataSource(
-                    assetFileDescriptor.getFileDescriptor(),
-                    assetFileDescriptor.getStartOffset(),
-                    assetFileDescriptor.getLength());
-
-            assetFileDescriptor.close();
-
-            mMediaPlayer.prepare();
-            mMediaPlayer.start();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 }

@@ -9,10 +9,10 @@
     </style>
 
     <!-- Splash Screen -->
-    <style name="SplashScreen" parent="Theme.AppCompat.Light.NoActionBar" />
+    <style name="SplashScreenTheme" parent="Theme.AppCompat.Light.NoActionBar" />
 
     <!-- Menu Button Style -->
-    <style name="menu_button_style" parent="Theme.AppCompat.Light">
+    <style name="MenuButtonStyle" parent="Theme.AppCompat.Light">
         <item name="colorControlHighlight">@color/activity_main_menu_button_highlight</item>
         <item name="colorButtonNormal">@color/activity_main_menu_button_normal</item>
         <item name="android:textSize">@dimen/activity_main_menu_button_title</item>

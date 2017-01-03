@@ -17,7 +17,6 @@ public class MainApp extends Application {
     }
 
     class InflateListsTask extends AsyncTask<Void, Void, Void> {
-
         @Override
         protected Void doInBackground(Void... voids) {
             AnimalsController.getInstance().setAnimals(getApplicationContext());
